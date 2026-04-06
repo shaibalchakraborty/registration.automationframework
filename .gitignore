@@ -1,0 +1,10 @@
+.env
+node_modules
+dist
+coverage
+test-results
+package-lock.json
+.features-gen
+cucumber-html
+cucumber-json
+cucumber-report
