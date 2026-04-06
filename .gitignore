@@ -5,6 +5,6 @@ coverage
 test-results
 package-lock.json
 .features-gen
-.cucumber-report
-.cucumber-json
-.cucumber-html
+cucumber-html
+cucumber-json
+cucumber-report
