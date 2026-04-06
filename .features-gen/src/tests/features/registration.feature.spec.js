@@ -1,0 +1,96 @@
+// Generated from: src/tests/features/registration.feature
+import { test } from "../../../../src/fixtures/fixtures.ts";
+
+test.describe('Registration form', () => {
+
+  test.beforeEach('Background', async ({ Given, registrationPage }, testInfo) => { if (testInfo.error) return;
+    await Given('the user navigates to the registration form', null, { registrationPage }); 
+  });
+  
+  test('User can register after agreeing to the policy', { tag: ['@smoke', '@bug'] }, async ({ When, Then, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Olivia"}]},{"cells":[{"value":"lastName"},{"value":"Harper"}]},{"cells":[{"value":"phone"},{"value":"5551234567"}]},{"cells":[{"value":"country"},{"value":"India"}]},{"cells":[{"value":"email"},{"value":"olivia@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the user agrees to the policy and submits the form', null, { registrationPage }); 
+    await Then('the registration confirmation banner should be displayed', null, { registrationPage }); 
+  });
+
+  test('Registration summary displays correct user details', { tag: ['@smoke', '@bug'] }, async ({ When, Then, And, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"John"}]},{"cells":[{"value":"lastName"},{"value":"Knight"}]},{"cells":[{"value":"phone"},{"value":"02102496529"}]},{"cells":[{"value":"country"},{"value":"New Zealand"}]},{"cells":[{"value":"email"},{"value":"john@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should be displayed', null, { registrationPage }); 
+    await And('the registration summary should include firstName "John"', null, { registrationPage }); 
+    await And('the registration summary should include Country "New Zealand"', null, { registrationPage }); 
+    await And('the registration summary should include email "john@example.com"', null, { registrationPage }); 
+    await And('the registration summary should include lastName "Knight"', null, { registrationPage }); 
+  });
+
+  test('validate phone number is correctly displayed in registration summary', { tag: ['@smoke', '@bug'] }, async ({ When, Then, And, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Olivia"}]},{"cells":[{"value":"lastName"},{"value":"Harper"}]},{"cells":[{"value":"phone"},{"value":"02102496529"}]},{"cells":[{"value":"country"},{"value":"India"}]},{"cells":[{"value":"email"},{"value":"olivia@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should be displayed', null, { registrationPage }); 
+    await And('the registration summary should include firstName "Olivia"', null, { registrationPage }); 
+    await And('the registration summary should include Country "India"', null, { registrationPage }); 
+    await And('the registration summary should include email "olivia@example.com"', null, { registrationPage }); 
+    await And('the registration summary should include phone "02102496529"', null, { registrationPage }); 
+  });
+
+  test('Phone number field should allow digits only', { tag: ['@smoke', '@bug'] }, async ({ When, Then, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Ethan"}]},{"cells":[{"value":"lastName"},{"value":"Williams"}]},{"cells":[{"value":"phone"},{"value":"abcdefgg8i"}]},{"cells":[{"value":"country"},{"value":"Australia"}]},{"cells":[{"value":"email"},{"value":"ethan@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should not be displayed', null, { registrationPage }); 
+  });
+
+  test('Registration should not succeeds when the last name is missing', { tag: ['@smoke', '@bug'] }, async ({ When, Then, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Liam"}]},{"cells":[{"value":"lastName"},{"value":"blank"}]},{"cells":[{"value":"phone"},{"value":"02102496529"}]},{"cells":[{"value":"country"},{"value":"Australia"}]},{"cells":[{"value":"email"},{"value":"liam@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should not be displayed', null, { registrationPage }); 
+  });
+
+  test('Registration should not succeeds when the email is missing', { tag: ['@smoke', '@bug'] }, async ({ When, Then, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Liam"}]},{"cells":[{"value":"lastName"},{"value":"douglas"}]},{"cells":[{"value":"phone"},{"value":"02102496529"}]},{"cells":[{"value":"country"},{"value":"Australia"}]},{"cells":[{"value":"email"},{"value":"blank"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should not be displayed', null, { registrationPage }); 
+  });
+
+  test('Registration should not succeeds with invalid email format', { tag: ['@smoke', '@bug'] }, async ({ When, Then, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Liam"}]},{"cells":[{"value":"lastName"},{"value":"douglas"}]},{"cells":[{"value":"phone"},{"value":"02102496529"}]},{"cells":[{"value":"country"},{"value":"Australia"}]},{"cells":[{"value":"email"},{"value":"not-proper-email"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should not be displayed', null, { registrationPage }); 
+  });
+
+  test.describe('Registration shows a validation message for malformed details', () => {
+
+    test('Example #1', { tag: ['@smoke'] }, async ({ When, Then, registrationPage }) => { 
+      await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Ava"}]},{"cells":[{"value":"lastName"},{"value":"Stone"}]},{"cells":[{"value":"phone"},{"value":"123"}]},{"cells":[{"value":"country"},{"value":"India"}]},{"cells":[{"value":"email"},{"value":"ava@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+      await Then('the registration result should contain text "The phone number should contain at least 10 characters!"', null, { registrationPage }); 
+    });
+
+    test('Example #2', { tag: ['@smoke'] }, async ({ When, Then, registrationPage }) => { 
+      await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"Ava"}]},{"cells":[{"value":"lastName"},{"value":"Stone"}]},{"cells":[{"value":"phone"},{"value":"1234567890"}]},{"cells":[{"value":"country"},{"value":"India"}]},{"cells":[{"value":"email"},{"value":"ava@example.com"}]},{"cells":[{"value":"password"},{"value":"123"}]}]}}, { registrationPage }); 
+      await Then('the registration result should contain text "The password should contain between [6,20] characters!"', null, { registrationPage }); 
+    });
+
+  });
+
+  test('Successful registration with only the mandatory business details', { tag: ['@smoke'] }, async ({ When, Then, And, registrationPage }) => { 
+    await When('the user submits the registration form with:', {"dataTable":{"rows":[{"cells":[{"value":"firstName"},{"value":"blank"}]},{"cells":[{"value":"lastName"},{"value":"Tester"}]},{"cells":[{"value":"phone"},{"value":"1234567890"}]},{"cells":[{"value":"country"},{"value":"blank"}]},{"cells":[{"value":"email"},{"value":"test@example.com"}]},{"cells":[{"value":"password"},{"value":"Password123"}]}]}}, { registrationPage }); 
+    await Then('the registration confirmation banner should be displayed', null, { registrationPage }); 
+    await And('the registration summary should include email "test@example.com"', null, { registrationPage }); 
+    await And('the registration summary should show the default country placeholder', null, { registrationPage }); 
+  });
+
+});
+
+// == technical section ==
+
+test.use({
+  $test: [({}, use) => use(test), { scope: 'test', box: true }],
+  $uri: [({}, use) => use('src/tests/features/registration.feature'), { scope: 'test', box: true }],
+  $bddFileData: [({}, use) => use(bddFileData), { scope: "test", box: true }],
+});
+
+const bddFileData = [ // bdd-data-start
+  {"pwTestLine":10,"pickleLine":10,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":11,"gherkinStepLine":11,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":12,"gherkinStepLine":18,"keywordType":"Outcome","textWithKeyword":"Then the user agrees to the policy and submits the form","stepMatchArguments":[]},{"pwStepLine":13,"gherkinStepLine":19,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should be displayed","stepMatchArguments":[{"group":{"children":[]}}]}]},
+  {"pwTestLine":16,"pickleLine":22,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":17,"gherkinStepLine":23,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":18,"gherkinStepLine":30,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should be displayed","stepMatchArguments":[{"group":{"children":[]}}]},{"pwStepLine":19,"gherkinStepLine":31,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include firstName \"John\"","stepMatchArguments":[{"group":{"start":50,"value":"\"John\"","children":[{"start":51,"value":"John","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":20,"gherkinStepLine":32,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include Country \"New Zealand\"","stepMatchArguments":[{"group":{"start":48,"value":"\"New Zealand\"","children":[{"start":49,"value":"New Zealand","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":21,"gherkinStepLine":33,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include email \"john@example.com\"","stepMatchArguments":[{"group":{"start":46,"value":"\"john@example.com\"","children":[{"start":47,"value":"john@example.com","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":22,"gherkinStepLine":34,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include lastName \"Knight\"","stepMatchArguments":[{"group":{"start":49,"value":"\"Knight\"","children":[{"start":50,"value":"Knight","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]}]},
+  {"pwTestLine":25,"pickleLine":37,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":26,"gherkinStepLine":38,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":27,"gherkinStepLine":45,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should be displayed","stepMatchArguments":[{"group":{"children":[]}}]},{"pwStepLine":28,"gherkinStepLine":46,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include firstName \"Olivia\"","stepMatchArguments":[{"group":{"start":50,"value":"\"Olivia\"","children":[{"start":51,"value":"Olivia","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":29,"gherkinStepLine":47,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include Country \"India\"","stepMatchArguments":[{"group":{"start":48,"value":"\"India\"","children":[{"start":49,"value":"India","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":30,"gherkinStepLine":48,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include email \"olivia@example.com\"","stepMatchArguments":[{"group":{"start":46,"value":"\"olivia@example.com\"","children":[{"start":47,"value":"olivia@example.com","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":31,"gherkinStepLine":49,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include phone \"02102496529\"","stepMatchArguments":[{"group":{"start":46,"value":"\"02102496529\"","children":[{"start":47,"value":"02102496529","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]}]},
+  {"pwTestLine":34,"pickleLine":52,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":35,"gherkinStepLine":53,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":36,"gherkinStepLine":60,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should not be displayed","stepMatchArguments":[{"group":{"start":43,"value":" not","children":[]}}]}]},
+  {"pwTestLine":39,"pickleLine":63,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":40,"gherkinStepLine":64,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":41,"gherkinStepLine":71,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should not be displayed","stepMatchArguments":[{"group":{"start":43,"value":" not","children":[]}}]}]},
+  {"pwTestLine":44,"pickleLine":74,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":45,"gherkinStepLine":75,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":46,"gherkinStepLine":82,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should not be displayed","stepMatchArguments":[{"group":{"start":43,"value":" not","children":[]}}]}]},
+  {"pwTestLine":49,"pickleLine":85,"tags":["@smoke","@bug"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":50,"gherkinStepLine":86,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":51,"gherkinStepLine":93,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should not be displayed","stepMatchArguments":[{"group":{"start":43,"value":" not","children":[]}}]}]},
+  {"pwTestLine":56,"pickleLine":108,"tags":["@smoke"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":57,"gherkinStepLine":97,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":58,"gherkinStepLine":104,"keywordType":"Outcome","textWithKeyword":"Then the registration result should contain text \"The phone number should contain at least 10 characters!\"","stepMatchArguments":[{"group":{"start":44,"value":"\"The phone number should contain at least 10 characters!\"","children":[{"start":45,"value":"The phone number should contain at least 10 characters!","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]}]},
+  {"pwTestLine":61,"pickleLine":109,"tags":["@smoke"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":62,"gherkinStepLine":97,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":63,"gherkinStepLine":104,"keywordType":"Outcome","textWithKeyword":"Then the registration result should contain text \"The password should contain between [6,20] characters!\"","stepMatchArguments":[{"group":{"start":44,"value":"\"The password should contain between [6,20] characters!\"","children":[{"start":45,"value":"The password should contain between [6,20] characters!","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]}]},
+  {"pwTestLine":68,"pickleLine":112,"tags":["@smoke"],"steps":[{"pwStepLine":7,"gherkinStepLine":7,"keywordType":"Context","textWithKeyword":"Given the user navigates to the registration form","isBg":true,"stepMatchArguments":[]},{"pwStepLine":69,"gherkinStepLine":113,"keywordType":"Action","textWithKeyword":"When the user submits the registration form with:","stepMatchArguments":[]},{"pwStepLine":70,"gherkinStepLine":120,"keywordType":"Outcome","textWithKeyword":"Then the registration confirmation banner should be displayed","stepMatchArguments":[{"group":{"children":[]}}]},{"pwStepLine":71,"gherkinStepLine":121,"keywordType":"Outcome","textWithKeyword":"And the registration summary should include email \"test@example.com\"","stepMatchArguments":[{"group":{"start":46,"value":"\"test@example.com\"","children":[{"start":47,"value":"test@example.com","children":[{"children":[]}]},{"children":[{"children":[]}]}]},"parameterTypeName":"string"}]},{"pwStepLine":72,"gherkinStepLine":122,"keywordType":"Outcome","textWithKeyword":"And the registration summary should show the default country placeholder","stepMatchArguments":[]}]},
+]; // bdd-data-end

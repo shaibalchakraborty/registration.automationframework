@@ -1,0 +1,34 @@
+{
+  "name": "registration.automationframework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "bddgen": "bddgen",
+    "test": "playwright test",
+    "test:headed": "node src/config/runner.js --headed",
+    "test:parallel": "node src/config/runner.js --parallel",
+    "test:sequential": "node src/config/runner.js --sequential",
+    "test:headed:parallel": "node src/config/runner.js --headed --parallel",
+    "test:headed:sequential": "node src/config/runner.js --headed --sequential",
+    "test:tags": "node src/config/runner.js",
+    "test:smoke": "node src/config/runner.js --tags=@smoke --headed --sequential",
+    "test:regression": "node src/config/runner.js --tags=@regression",
+    "report:cucumber": "node src/config/generate-cucumber-report.js",
+    "test:bdd": "node src/config/runner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.7.0",
+    "@cucumber/pretty-formatter": "^3.2.0",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2",
+    "dotenv": "^17.4.0",
+    "multiple-cucumber-html-reporter": "^3.10.0",
+    "playwright-bdd": "^8.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}

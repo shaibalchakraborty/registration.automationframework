@@ -1,0 +1,721 @@
+<testsuites id="" name="" tests="10" failures="6" skipped="0" errors="1" time="103.62861699999999">
+<testsuite name="src/tests/features/registration.feature.spec.js" timestamp="2026-04-06T02:29:50.167Z" hostname="chromium" tests="10" failures="6" skipped="0" time="88.699" errors="1">
+<testcase name="Registration form › User can register after agreeing to the policy" classname="src/tests/features/registration.feature.spec.js" time="4.345">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<error message="Cannot read properties of undefined (reading &apos;rowsHash&apos;)" type="TypeError">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:10:7 › Registration form › User can register after agreeing to the policy @smoke @bug › Then the user agrees to the policy and submits the form 
+
+    TypeError: Cannot read properties of undefined (reading 'rowsHash')
+
+       at ../src/tests/step-definitions/registration.steps.ts:56
+
+      54 |
+      55 | Then('the user agrees to the policy and submits the form', async ({ registrationPage }, dataTable: DataTable) => {
+    > 56 |         await registrationPage.registerWithPolicyAgreement(buildRegistrationDetails(dataTable.rowsHash()));
+         |                                                                                               ^
+      57 |     },);
+      58 |
+      59 | Then(
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:56:95)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:12:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TypeError: Cannot read properties of undefined (reading 'rowsHash')
+
+       at ../src/tests/step-definitions/registration.steps.ts:56
+
+      54 |
+      55 | Then('the user agrees to the policy and submits the form', async ({ registrationPage }, dataTable: DataTable) => {
+    > 56 |         await registrationPage.registerWithPolicyAgreement(buildRegistrationDetails(dataTable.rowsHash()));
+         |                                                                                               ^
+      57 |     },);
+      58 |
+      59 | Then(
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:56:95)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:12:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-6c76d-fter-agreeing-to-the-policy-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="Registration form › Registration summary displays correct user details" classname="src/tests/features/registration.feature.spec.js" time="13.311">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toContainText(expected) failed" type="expect.toContainText">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:16:7 › Registration form › Registration summary displays correct user details @smoke @bug › And the registration summary should include lastName "Knight" 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#resultLn')
+    Expected substring: "Last Name: Knight"
+    Received string:    "Last Name: Knigh"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('#resultLn')
+        9 × locator resolved to <div id="resultLn">Last Name: Knigh</div>
+          - unexpected value "Last Name: Knigh"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:31
+
+      29 |
+      30 | Then('the registration summary should include lastName {string}', async ({registrationPage}, lastname: string) => {
+    > 31 |         await expect(registrationPage.getResultLastName()).toContainText(`Last Name: ${lastname}`);
+         |                                                            ^
+      32 | });
+      33 |
+      34 |
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:31:60)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:22:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#resultLn')
+    Expected substring: "Last Name: Knight"
+    Received string:    "Last Name: Knigh"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('#resultLn')
+        9 × locator resolved to <div id="resultLn">Last Name: Knigh</div>
+          - unexpected value "Last Name: Knigh"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:31
+
+      29 |
+      30 | Then('the registration summary should include lastName {string}', async ({registrationPage}, lastname: string) => {
+    > 31 |         await expect(registrationPage.getResultLastName()).toContainText(`Last Name: ${lastname}`);
+         |                                                            ^
+      32 | });
+      33 |
+      34 |
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:31:60)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:22:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-bd986-splays-correct-user-details-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › validate phone number is correctly displayed in registration summary" classname="src/tests/features/registration.feature.spec.js" time="13.417">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toContainText(expected) failed" type="expect.toContainText">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:25:7 › Registration form › validate phone number is correctly displayed in registration summary @smoke @bug › And the registration summary should include phone "02102496529" 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#resultPhone')
+    Expected substring: "Phone Number: 02102496529"
+    Received string:    "Phone Number: 021024965210"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('#resultPhone')
+        9 × locator resolved to <div id="resultPhone">Phone Number: 021024965210</div>
+          - unexpected value "Phone Number: 021024965210"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:36
+
+      34 |
+      35 | Then('the registration summary should include phone {string}', async ({ registrationPage }, phone: string) => {
+    > 36 |         await expect(registrationPage.getResultPhone()).toContainText(`Phone Number: ${phone}`);
+         |                                                         ^
+      37 |     }
+      38 | );
+      39 |
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:36:57)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:31:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('#resultPhone')
+    Expected substring: "Phone Number: 02102496529"
+    Received string:    "Phone Number: 021024965210"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toContainText" with timeout 5000ms
+      - waiting for locator('#resultPhone')
+        9 × locator resolved to <div id="resultPhone">Phone Number: 021024965210</div>
+          - unexpected value "Phone Number: 021024965210"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:36
+
+      34 |
+      35 | Then('the registration summary should include phone {string}', async ({ registrationPage }, phone: string) => {
+    > 36 |         await expect(registrationPage.getResultPhone()).toContainText(`Phone Number: ${phone}`);
+         |                                                         ^
+      37 |     }
+      38 | );
+      39 |
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:36:57)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:31:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-cb9a4-yed-in-registration-summary-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › Phone number field should allow digits only" classname="src/tests/features/registration.feature.spec.js" time="13.363">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).not.toBeVisible() failed" type="expect.not.toBeVisible">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:34:7 › Registration form › Phone number field should allow digits only @smoke @bug › Then the registration confirmation banner should not be displayed 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:36:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-4d4e8-ld-should-allow-digits-only-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › Registration should not succeeds when the last name is missing" classname="src/tests/features/registration.feature.spec.js" time="13.285">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).not.toBeVisible() failed" type="expect.not.toBeVisible">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:39:7 › Registration form › Registration should not succeeds when the last name is missing @smoke @bug › Then the registration confirmation banner should not be displayed 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:41:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:41:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-855ea-en-the-last-name-is-missing-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › Registration should not succeeds when the email is missing" classname="src/tests/features/registration.feature.spec.js" time="13.268">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).not.toBeVisible() failed" type="expect.not.toBeVisible">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:44:7 › Registration form › Registration should not succeeds when the email is missing @smoke @bug › Then the registration confirmation banner should not be displayed 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:46:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:46:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-2cce9-s-when-the-email-is-missing-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › Registration should not succeeds with invalid email format" classname="src/tests/features/registration.feature.spec.js" time="13.171">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/test-failed-1.png]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/video.webm]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/error-context.md]]
+
+[[ATTACHMENT|src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).not.toBeVisible() failed" type="expect.not.toBeVisible">
+<![CDATA[  [chromium] › src/tests/features/registration.feature.spec.js:49:7 › Registration form › Registration should not succeeds with invalid email format @smoke @bug › Then the registration confirmation banner should not be displayed 
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:51:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium/error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  locator('[role="alert"], .alert').first()
+    Expected: not visible
+    Received: visible
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('[role="alert"], .alert').first()
+        9 × locator resolved to <div role="alert" id="message" class="alert alert-danger">Successfully registered the following information</div>
+          - unexpected value "visible"
+
+
+       at ../src/tests/step-definitions/registration.steps.ts:17
+
+      15 |     const confirmationBanner = registrationPage.getConfirmationBanner();
+      16 |     if (negate) {
+    > 17 |       await expect(confirmationBanner).not.toBeVisible();
+         |                                            ^
+      18 |       return;
+      19 |     }
+      20 |     await expect(confirmationBanner).toBeVisible();
+        at Object.<anonymous> (/Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/src/tests/step-definitions/registration.steps.ts:17:44)
+        at /Users/shaibalchakraborty/Desktop/demo projects/Registration.AutomationFramework/.features-gen/src/tests/features/registration.feature.spec.js:51:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/trace.zip
+    Usage:
+
+        npx playwright show-trace ../test-results/src-tests-features-registr-f8b24-s-with-invalid-email-format-chromium-retry1/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Registration form › Registration shows a validation message for malformed details › Example #1" classname="src/tests/features/registration.feature.spec.js" time="1.533">
+</testcase>
+<testcase name="Registration form › Registration shows a validation message for malformed details › Example #2" classname="src/tests/features/registration.feature.spec.js" time="1.484">
+</testcase>
+<testcase name="Registration form › Successful registration with only the mandatory business details" classname="src/tests/features/registration.feature.spec.js" time="1.522">
+</testcase>
+</testsuite>
+</testsuites>
